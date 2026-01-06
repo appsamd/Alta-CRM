@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Alta CRM</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/Dzbw24sk/Favicon-Alta-CRM.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0D0F1C;
+            --secondary: #5B4FE8;
+            --accent: #00E5FF;
+            --text: #E8EAF0;
+            --text-dim: #9BA3B4;
+            --surface: #181B2A;
+            --border: rgba(255, 255, 255, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0 80px;
+        }
+
+        h1 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .post-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .post-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(91, 79, 232, 0.2);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .post-content {
+            padding: 30px;
+        }
+
+        .post-category {
+            display: inline-block;
+            background: rgba(91, 79, 232, 0.2);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .post-card h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .post-card p {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            transform: translateX(5px);
+            display: inline-block;
+        }
+
+        .newsletter {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 60px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .newsletter h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .newsletter p {
+            color: var(--text-dim);
+            margin-bottom: 32px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 14px 20px;
+            background: var(--primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .btn {
+            padding: 14px 28px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #6D5FFF;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-text {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter {
+                padding: 40px 30px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html"><img src="http://i.postimg.cc/7Y6VKq0m/Logo-Alta-CRM-4x1-Oficial-Fundo-Site.png" alt="Alta CRM"></a>
+        </header>
+
+        <section class="hero">
+            <h1>Blog <span class="gradient-text">Alta CRM</span></h1>
+            <p class="subtitle">Insights, tendências e melhores práticas em vendas e inteligência artificial</p>
+        </section>
+
+        <div class="posts-grid">
+            <div class="post-card">
+                <div class="post-image">🤖</div>
+                <div class="post-content">
+                    <span class="post-category">IA & Vendas</span>
+                    <h2>Como a IA Está Transformando o Processo de Vendas B2B</h2>
+                    <p>Descubra como empresas estão usando inteligência artificial para automatizar prospecção, qualificação de leads e fechamento de negócios.</p>
+                    <div class="post-meta">
+                        <span>📅 15 Jan 2026</span>
+                        <span>⏱️ 5 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-image">💬</div>
+                <div class="post-content">
+                    <span class="post-category">WhatsApp Business</span>
+                    <h2>WhatsApp para Vendas: Guia Completo 2026</h2>
+                    <p>Tudo que você precisa saber para transformar o WhatsApp em sua principal ferramenta de vendas e atendimento.</p>
+                    <div class="post-meta">
+                        <span>📅 12 Jan 2026</span>
+                        <span>⏱️ 8 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-image">📊</div>
+                <div class="post-content">
+                    <span class="post-category">CRM</span>
+                    <h2>10 Métricas de CRM que Todo Gestor Deve Acompanhar</h2>
+                    <p>As métricas essenciais para medir o sucesso do seu processo comercial e tomar decisões baseadas em dados.</p>
+                    <div class="post-meta">
+                        <span>📅 08 Jan 2026</span>
+                        <span>⏱️ 6 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-image">🎯</div>
+                <div class="post-content">
+                    <span class="post-category">Prospecção</span>
+                    <h2>Prospecção Ativa vs Passiva: Quando Usar Cada Uma</h2>
+                    <p>Entenda as diferenças entre estratégias de prospecção e como combinar ambas para gerar mais oportunidades.</p>
+                    <div class="post-meta">
+                        <span>📅 05 Jan 2026</span>
+                        <span>⏱️ 7 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-image">⚡</div>
+                <div class="post-content">
+                    <span class="post-category">Automação</span>
+                    <h2>5 Processos de Vendas que Você Deveria Automatizar Hoje</h2>
+                    <p>Identifique gargalos no seu processo comercial e aprenda a automatizá-los para vender mais em menos tempo.</p>
+                    <div class="post-meta">
+                        <span>📅 02 Jan 2026</span>
+                        <span>⏱️ 5 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card">
+                <div class="post-image">🚀</div>
+                <div class="post-content">
+                    <span class="post-category">Cases</span>
+                    <h2>Como Triplicar Vendas Sem Aumentar a Equipe</h2>
+                    <p>Case real de empresa que multiplicou resultados usando automação inteligente e IA no processo comercial.</p>
+                    <div class="post-meta">
+                        <span>📅 29 Dez 2025</span>
+                        <span>⏱️ 10 min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="newsletter">
+            <h2>📬 Receba Conteúdo Exclusivo</h2>
+            <p>Assine nossa newsletter e receba dicas semanais sobre vendas, IA e automação</p>
+            <form class="newsletter-form" action="https://wa.me/5516994043616?text=Quero assinar a newsletter do Alta CRM" method="get" target="_blank">
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit" class="btn">Assinar Grátis</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="http://i.postimg.cc/7Y6VKq0m/Logo-Alta-CRM-4x1-Oficial-Fundo-Site.png" alt="Alta CRM">
+            </div>
+            <p class="footer-text">© 2026 Alta CRM. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

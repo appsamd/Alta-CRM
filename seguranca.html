@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segurança - Alta CRM</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/Dzbw24sk/Favicon-Alta-CRM.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0D0F1C;
+            --secondary: #5B4FE8;
+            --accent: #00E5FF;
+            --success: #10B981;
+            --text: #E8EAF0;
+            --text-dim: #9BA3B4;
+            --surface: #181B2A;
+            --border: rgba(255, 255, 255, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .security-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s;
+        }
+
+        .security-card:hover {
+            border-color: var(--success);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(16, 185, 129, 0.15);
+        }
+
+        .security-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .security-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .security-card p {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        .compliance-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 60px;
+            margin-bottom: 80px;
+        }
+
+        .compliance-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .compliance-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--primary);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .compliance-badge {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .compliance-item h4 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .compliance-item p {
+            font-size: 13px;
+            color: var(--text-dim);
+        }
+
+        .faq-section {
+            margin-bottom: 80px;
+        }
+
+        .faq-section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 16px;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, var(--secondary), #7B6FFF);
+            padding: 60px;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .contact-box p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: white;
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border);
+            margin-top: 80px;
+        }
+
+        .footer-text {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .security-grid,
+            .compliance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .compliance-section {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html"><img src="http://i.postimg.cc/7Y6VKq0m/Logo-Alta-CRM-4x1-Oficial-Fundo-Site.png" alt="Alta CRM"></a>
+        </header>
+
+        <section class="hero">
+            <h1>Segurança e <span class="gradient-text">Confiança</span></h1>
+            <p class="subtitle">Seus dados protegidos com os mais altos padrões de segurança da informação</p>
+        </section>
+
+        <div class="security-grid">
+            <div class="security-card">
+                <div class="security-icon">🔐</div>
+                <h3>Criptografia de Ponta a Ponta</h3>
+                <p>Todos os dados são criptografados em trânsito (TLS 1.3) e em repouso (AES-256), garantindo que suas informações estejam sempre protegidas.</p>
+            </div>
+
+            <div class="security-card">
+                <div class="security-icon">🏢</div>
+                <h3>Infraestrutura Segura</h3>
+                <p>Hospedagem em AWS com redundância, backups automáticos diários e recuperação de desastres em múltiplas regiões.</p>
+            </div>
+
+            <div class="security-card">
+                <div class="security-icon">👁️</div>
+                <h3>Monitoramento 24/7</h3>
+                <p>Sistema de detecção de intrusão, logs de auditoria completos e monitoramento contínuo de ameaças e vulnerabilidades.</p>
+            </div>
+
+            <div class="security-card">
+                <div class="security-icon">🔑</div>
+                <h3>Controle de Acesso</h3>
+                <p>Autenticação de dois fatores (2FA), permissões granulares por usuário e controle de acesso baseado em funções (RBAC).</p>
+            </div>
+
+            <div class="security-card">
+                <div class="security-icon">🛡️</div>
+                <h3>Proteção DDoS</h3>
+                <p>Proteção contra ataques distribuídos de negação de serviço com CDN global e firewall de aplicação web (WAF).</p>
+            </div>
+
+            <div class="security-card">
+                <div class="security-icon">📝</div>
+                <h3>Logs de Auditoria</h3>
+                <p>Rastreamento completo de todas as ações realizadas na plataforma para conformidade e investigação de incidentes.</p>
+            </div>
+        </div>
+
+        <div class="compliance-section">
+            <h2>Conformidade e Certificações</h2>
+            <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px;">
+                Estamos comprometidos com os mais rigorosos padrões de segurança e privacidade
+            </p>
+
+            <div class="compliance-grid">
+                <div class="compliance-item">
+                    <div class="compliance-badge">🇧🇷</div>
+                    <h4>LGPD</h4>
+                    <p>Conforme com a Lei Geral de Proteção de Dados</p>
+                </div>
+
+                <div class="compliance-item">
+                    <div class="compliance-badge">☁️</div>
+                    <h4>AWS</h4>
+                    <p>Infraestrutura certificada ISO 27001</p>
+                </div>
+
+                <div class="compliance-item">
+                    <div class="compliance-badge">🔒</div>
+                    <h4>SSL/TLS</h4>
+                    <p>Certificados atualizados e A+ rating</p>
+                </div>
+
+                <div class="compliance-item">
+                    <div class="compliance-badge">📊</div>
+                    <h4>SOC 2</h4>
+                    <p>Em processo de certificação</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="faq-section">
+            <h2>Perguntas Frequentes sobre Segurança</h2>
+
+            <div class="faq-item">
+                <h3>🔐 Como são armazenadas minhas conversas do WhatsApp?</h3>
+                <p>Todas as conversas são criptografadas e armazenadas em servidores seguros na AWS. Apenas sua equipe tem acesso aos dados, e implementamos criptografia em repouso com chaves gerenciadas por você.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>💾 Vocês fazem backup dos dados?</h3>
+                <p>Sim! Realizamos backups automáticos diários com retenção de 30 dias. Os backups são armazenados em região geográfica diferente para proteção contra desastres.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>👥 Quem pode acessar meus dados?</h3>
+                <p>Apenas usuários autorizados da sua equipe têm acesso aos dados. Nossa equipe técnica só acessa seus dados com autorização explícita para suporte ou quando requerido por lei.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>🌍 Onde os dados são armazenados?</h3>
+                <p>Seus dados são armazenados em data centers da AWS na região do Brasil (São Paulo), garantindo conformidade com a LGPD e baixa latência.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>🔄 Posso exportar meus dados?</h3>
+                <p>Sim! Você pode exportar todos os seus dados a qualquer momento em formatos padrão (CSV, JSON). Garantimos a portabilidade conforme a LGPD.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>🚨 O que acontece se houver um incidente de segurança?</h3>
+                <p>Temos um plano de resposta a incidentes. Você será notificado em até 72 horas em caso de violação que afete seus dados, conforme exigido pela LGPD.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>🔍 Vocês realizam testes de segurança?</h3>
+                <p>Sim! Realizamos testes de penetração trimestrais, análise de vulnerabilidades contínua e revisões de código com foco em segurança.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>📧 Como reporto uma vulnerabilidade de segurança?</h3>
+                <p>Temos um programa de divulgação responsável. Envie detalhes para <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="abd8cec8ded9c2dfd2ebcac7dfcac8d9c685c8c4c685c9d9">[email&#160;protected]</a>. Investigamos todas as reportações em até 48 horas.</p>
+            </div>
+        </section>
+
+        <div class="contact-box">
+            <h2>Dúvidas sobre Segurança?</h2>
+            <p>Nossa equipe de segurança está disponível para esclarecer suas dúvidas</p>
+            <a href="https://wa.me/5516994043616?text=Tenho dúvidas sobre segurança do Alta CRM" class="btn" target="_blank">Falar com Segurança</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="http://i.postimg.cc/7Y6VKq0m/Logo-Alta-CRM-4x1-Oficial-Fundo-Site.png" alt="Alta CRM">
+            </div>
+     
