@@ -109,17 +109,7 @@
             overflow-x: hidden;
         }
 
-        .noise {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: 9999;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        }
+        /* Background suave removido - estava granulado */
 
         .gradient-bg {
             position: fixed;
@@ -977,7 +967,8 @@
             }
 
             .pricing-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
+                max-width: 100% !important;
             }
         }
 
@@ -1021,7 +1012,7 @@
     </style>
 </head>
 <body>
-    <div class="noise"></div>
+    <!-- Noise texture removida - estava granulada -->
     <div class="gradient-bg">
         <div class="glow glow-1"></div>
         <div class="glow glow-2"></div>
@@ -1293,13 +1284,16 @@
                     <p class="plan-description">Solução completa</p>
                     <div class="price">Sob consulta</div>
                     <ul class="plan-features">
-                        <li>Tudo do Business</li>
-                        <li>Até 10 Atendentes</li>
-                        <li>1 número WhatsApp</li>
+                        <li>Atendentes ilimitados</li>
+                        <li>Múltiplos números WhatsApp</li>
                         <li>Implementação completa</li>
-                        <li><b>Configuração personalizada</b></li>
+                        <li>Configuração personalizada</li>
+                        <li>Integrações customizadas</li>
+                        <li>Treinamento da equipe</li>
                         <li>Suporte prioritário dedicado</li>
                         <li>Relatórios personalizados</li>
+                        <li>SLA garantido</li>
+                        <li>Gerente de conta exclusivo</li>
                     </ul>
                     <a href="https://wa.me/5516994043616?text=Quero saber mais sobre o plano Enterprise" class="btn btn-secondary" target="_blank">Falar com Especialista</a>
                 </div>
@@ -1402,12 +1396,13 @@
             });
         });
 
-        // Animação sequencial de digitação nas conversas
+        // Animação sequencial de digitação nas conversas - Estilo WhatsApp
         const chatExamples = document.querySelectorAll('.chat-example');
         
         chatExamples.forEach((example) => {
             const messages = example.querySelectorAll('.chat-message');
             
+            // Esconde todas as mensagens inicialmente
             messages.forEach(msg => {
                 msg.style.opacity = '0';
                 msg.style.transform = 'translateY(10px)';
@@ -1416,7 +1411,7 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        animateMessages(messages);
+                        animateMessagesSequentially(messages);
                         observer.unobserve(entry.target);
                     }
                 });
@@ -1425,41 +1420,57 @@
             observer.observe(example);
         });
 
-        function animateMessages(messages) {
-            let delay = 0;
+        function animateMessagesSequentially(messages) {
+            let currentDelay = 0;
             
             messages.forEach((msg, index) => {
+                const isBot = msg.querySelector('.message-bot');
+                const isUser = msg.querySelector('.message-user');
+                
+                // Tempo base: mensagem de usuário é instantânea, bot tem delay
+                const appearDelay = currentDelay;
+                
                 setTimeout(() => {
-                    msg.style.transition = 'all 0.5s ease-out';
+                    // Faz mensagem aparecer
+                    msg.style.transition = 'all 0.3s ease-out';
                     msg.style.opacity = '1';
                     msg.style.transform = 'translateY(0)';
-                    
-                    const messageBot = msg.querySelector('.message-bot');
-                    if (messageBot && !messageBot.classList.contains('message-error')) {
-                        const originalText = messageBot.textContent;
-                        messageBot.textContent = '';
-                        
-                        // Mostra indicador de digitação
-                        messageBot.innerHTML = '<span style="opacity: 0.5;">●●●</span>';
-                        
-                        setTimeout(() => {
-                            messageBot.textContent = '';
-                            
-                            // Efeito de digitação
-                            let charIndex = 0;
-                            const typeInterval = setInterval(() => {
-                                if (charIndex < originalText.length) {
-                                    messageBot.textContent += originalText[charIndex];
-                                    charIndex++;
-                                } else {
-                                    clearInterval(typeInterval);
-                                }
-                            }, 30);
-                        }, 600);
-                    }
-                }, delay);
+                }, appearDelay);
                 
-                delay += 2000; // 2 segundos entre cada mensagem
+                if (isBot && !isBot.classList.contains('message-error')) {
+                    const originalText = isBot.textContent.trim();
+                    
+                    // Mostra indicador de digitação ANTES da mensagem
+                    setTimeout(() => {
+                        isBot.innerHTML = '<span style="opacity: 0.5; font-size: 20px;">●●●</span>';
+                    }, appearDelay);
+                    
+                    // Remove "digitando" e começa a digitar de verdade
+                    setTimeout(() => {
+                        isBot.textContent = '';
+                        
+                        let charIndex = 0;
+                        const typingSpeed = 20; // ms por caractere
+                        
+                        const typeInterval = setInterval(() => {
+                            if (charIndex < originalText.length) {
+                                isBot.textContent += originalText[charIndex];
+                                charIndex++;
+                            } else {
+                                clearInterval(typeInterval);
+                            }
+                        }, typingSpeed);
+                        
+                    }, appearDelay + 800); // 800ms mostrando "●●●"
+                    
+                    // Próxima mensagem: tempo de aparecer + 800ms (digitando) + tempo de digitar + pausa
+                    const typingDuration = originalText.length * 20;
+                    currentDelay = appearDelay + 800 + typingDuration + 600;
+                    
+                } else {
+                    // Mensagem de usuário: próxima mensagem vem rápido
+                    currentDelay = appearDelay + 1000;
+                }
             });
         }
     </script>
