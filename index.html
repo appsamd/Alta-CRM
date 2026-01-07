@@ -573,14 +573,14 @@
         }
 
         .chat-example {
-            background: var(--surface);
-            border-radius: 16px;
-            padding: 20px;
+            background: transparent;
+            border: none;
+            padding: 40px 0;
             margin-bottom: 24px;
         }
 
         .chat-message {
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             animation: messageSlide 0.5s ease-out;
         }
 
@@ -1369,16 +1369,20 @@
                 font-size: 28px;
             }
 
-            /* Chat WhatsApp mais largo no mobile */
+            /* Chat WhatsApp sem template - apenas bolhas */
             .chat-example {
-                max-width: 100%;
-                padding: 30px 20px;
+                padding: 40px 10px;
+            }
+
+            .chat-message {
+                margin-bottom: 20px;
             }
 
             .message-user,
             .message-bot {
-                max-width: 85%;
-                font-size: 14px;
+                max-width: 80%;
+                font-size: 15px;
+                padding: 14px 18px;
             }
 
             /* CTA moderno mobile */
