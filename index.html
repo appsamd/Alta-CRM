@@ -600,19 +600,27 @@
         }
 
         .message-user {
-            background: rgba(91, 79, 232, 0.15);
-            padding: 10px 14px;
-            border-radius: 12px 12px 12px 4px;
-            font-size: 13px;
-            margin-bottom: 6px;
+            background: #DCF8C6;
+            color: #000;
+            padding: 12px 16px;
+            border-radius: 18px 18px 4px 18px;
+            font-size: 14px;
+            margin-bottom: 8px;
+            max-width: 75%;
+            align-self: flex-end;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
         .message-bot {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px 14px;
-            border-radius: 12px 12px 4px 12px;
-            font-size: 13px;
+            background: #FFFFFF;
+            color: #000;
+            padding: 12px 16px;
+            border-radius: 18px 18px 18px 4px;
+            font-size: 14px;
             line-height: 1.6;
+            max-width: 75%;
+            align-self: flex-start;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
         }
 
         .message-error {
@@ -840,56 +848,130 @@
         }
 
         /* CTA */
-        .cta-section {
-            padding: 70px 0;
-            text-align: center;
+        /* CTA Section - Design Moderno */
+        .cta-section-modern {
+            padding: 120px 0;
+            background: linear-gradient(180deg, var(--primary) 0%, #0A0C16 100%);
+            position: relative;
         }
 
-        .cta-box {
-            background: linear-gradient(135deg, var(--secondary), #7B6FFF);
-            padding: 60px 50px;
+        .cta-modern {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+            background: rgba(91, 79, 232, 0.03);
+            border: 1px solid rgba(91, 79, 232, 0.2);
             border-radius: 32px;
+            padding: 80px;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-box::before {
+        .cta-modern::before {
             content: '';
             position: absolute;
             top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
-            animation: rotate 15s linear infinite;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(91, 79, 232, 0.15), transparent);
+            filter: blur(80px);
+            pointer-events: none;
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .cta-box h2 {
-            font-size: 38px;
-            color: white;
-            margin-bottom: 16px;
+        .cta-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
-        .cta-box p {
-            font-size: 16px;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 32px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-box .btn {
-            background: white;
+        .cta-badge {
+            display: inline-block;
+            background: rgba(91, 79, 232, 0.15);
+            border: 1px solid rgba(91, 79, 232, 0.3);
             color: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+        }
+
+        .cta-headline {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--text-dim);
+            margin-bottom: 0;
+        }
+
+        .cta-action {
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .btn-cta-modern {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 22px 48px;
+            background: linear-gradient(135deg, var(--secondary), #7B6FFF);
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(91, 79, 232, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cta-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-cta-modern:hover::before {
+            left: 100%;
+        }
+
+        .btn-cta-modern:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(91, 79, 232, 0.4);
+        }
+
+        .btn-arrow {
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+
+        .btn-cta-modern:hover .btn-arrow {
+            transform: translateX(5px);
+        }
+
+        .cta-guarantee {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
         }
 
         .cta-box .btn:hover {
@@ -953,6 +1035,268 @@
         }
 
         /* Responsive */
+        /* Calculadora de ROI - Design Impactante */
+        .roi-calculator-hero {
+            background: linear-gradient(180deg, var(--primary) 0%, #0A0C16 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roi-calculator-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(239, 68, 68, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(239, 68, 68, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .roi-inputs-side {
+            padding-right: 40px;
+        }
+
+        .roi-title {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .gradient-text-red {
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .roi-subtitle {
+            font-size: 16px;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .slider-group {
+            margin-bottom: 40px;
+        }
+
+        .slider-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+        }
+
+        .slider-value {
+            font-size: 32px;
+            font-weight: 800;
+            font-family: 'Cabinet Grotesk', sans-serif;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .custom-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 10px;
+            background: rgba(91, 79, 232, 0.2);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .custom-slider:hover {
+            background: rgba(91, 79, 232, 0.3);
+        }
+
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--secondary);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(91, 79, 232, 0.4);
+            transition: all 0.3s;
+        }
+
+        .custom-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 6px 20px rgba(91, 79, 232, 0.6);
+        }
+
+        .custom-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--secondary);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 12px rgba(91, 79, 232, 0.4);
+            transition: all 0.3s;
+        }
+
+        .custom-slider::-moz-range-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 6px 20px rgba(91, 79, 232, 0.6);
+        }
+
+        .roi-result-side {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05));
+            border: 2px solid rgba(239, 68, 68, 0.3);
+            border-radius: 32px;
+            padding: 50px;
+            position: relative;
+        }
+
+        .result-badge {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #EF4444;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .result-amount {
+            font-size: 72px;
+            font-weight: 900;
+            font-family: 'Cabinet Grotesk', sans-serif;
+            color: #EF4444;
+            line-height: 1;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+        }
+
+        .result-text {
+            font-size: 15px;
+            color: var(--text-dim);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        .btn-stop-bleeding {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-stop-bleeding:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(239, 68, 68, 0.4);
+            background: linear-gradient(135deg, #DC2626, #B91C1C);
+        }
+
+        .result-details {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .detail-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .detail-item strong {
+            display: block;
+            color: var(--text);
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .detail-item p {
+            color: var(--text-dim);
+            font-size: 13px;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .why-ia-box {
+            background: rgba(91, 79, 232, 0.1);
+            border: 1px solid rgba(91, 79, 232, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 32px;
+        }
+
+        .why-ia-box h4 {
+            font-size: 16px;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .why-ia-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .why-ia-box li {
+            font-size: 13px;
+            color: var(--text-dim);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .disclaimer-small {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            line-height: 1.5;
+            margin-top: 24px;
+            font-style: italic;
+        }
+
+        /* Canvas de Partículas */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
         @media (max-width: 1024px) {
             .comparison-grid {
                 grid-template-columns: 1fr;
@@ -960,6 +1304,12 @@
 
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-modern {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 60px 40px;
             }
 
             .stats {
@@ -994,6 +1344,59 @@
                 grid-template-columns: 1fr;
             }
 
+            .roi-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .roi-inputs-side {
+                padding-right: 0;
+            }
+
+            .roi-title {
+                font-size: 36px;
+            }
+
+            .roi-result-side {
+                padding: 40px 30px;
+            }
+
+            .result-amount {
+                font-size: 56px;
+            }
+
+            .slider-value {
+                font-size: 28px;
+            }
+
+            /* Chat WhatsApp mais largo no mobile */
+            .chat-example {
+                max-width: 100%;
+                padding: 30px 20px;
+            }
+
+            .message-user,
+            .message-bot {
+                max-width: 85%;
+                font-size: 14px;
+            }
+
+            /* CTA moderno mobile */
+            .cta-modern {
+                padding: 50px 30px;
+            }
+
+            .cta-headline {
+                font-size: 36px;
+            }
+
+            .btn-cta-modern {
+                width: 100%;
+                justify-content: center;
+                padding: 20px 40px;
+                font-size: 16px;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -1012,7 +1415,8 @@
     </style>
 </head>
 <body>
-    <!-- Noise texture removida - estava granulada -->
+    <!-- Canvas de Partículas Conectadas -->
+    <canvas id="particles-canvas"></canvas>
     <div class="gradient-bg">
         <div class="glow glow-1"></div>
         <div class="glow glow-2"></div>
@@ -1160,6 +1564,92 @@
         </div>
     </section>
 
+    <!-- Calculadora de ROI - Design Impactante -->
+    <section class="section roi-calculator-hero">
+        <div class="container">
+            <div class="roi-grid">
+                <!-- Lado Esquerdo: Inputs -->
+                <div class="roi-inputs-side">
+                    <h2 class="roi-title">
+                        Quanto dinheiro você está<br>
+                        <span class="gradient-text-red">deixando na mesa?</span>
+                    </h2>
+                    
+                    <p class="roi-subtitle">
+                        A cada minuto que seu lead espera, a chance de venda cai drasticamente. 
+                        Calcule seu prejuízo mensal por não ter um atendimento instantâneo.
+                    </p>
+
+                    <div class="slider-group">
+                        <label>LEADS / MÊS</label>
+                        <div class="slider-value" id="leads-display">100</div>
+                        <input type="range" id="leads-slider" min="10" max="1000" value="100" step="10" class="custom-slider">
+                    </div>
+
+                    <div class="slider-group">
+                        <label>TICKET MÉDIO</label>
+                        <div class="slider-value" id="ticket-display">R$ 600</div>
+                        <input type="range" id="ticket-slider" min="100" max="5000" value="1000" step="100" class="custom-slider">
+                    </div>
+                </div>
+
+                <!-- Lado Direito: Resultado -->
+                <div class="roi-result-side">
+                    <div class="result-badge">⚠️ PREJUÍZO ESTIMADO</div>
+                    
+                    <div class="result-amount" id="loss-display">R$ 9.000</div>
+                    
+                    <p class="result-text">
+                        Este é o valor que você recuperaria automatizando seu atendimento com o Alta CRM.
+                    </p>
+
+                    <button class="btn-stop-bleeding" onclick="window.location.href='https://wa.me/5516994043616?text=Quero parar de perder vendas com o Alta CRM'">
+                        ESTANCAR ESSE SANGRAMENTO AGORA
+                    </button>
+
+                    <div class="result-details" id="calc-breakdown">
+                        <div class="detail-item">
+                            <span class="detail-icon">📊</span>
+                            <div>
+                                <strong>40 leads ignorados</strong>
+                                <p>40% dos seus leads não são respondidos adequadamente</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰</span>
+                            <div>
+                                <strong>20 leads recuperáveis</strong>
+                                <p>Metade poderia converter com atendimento 24/7</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">💸</span>
+                            <div>
+                                <strong>1 venda perdida/mês</strong>
+                                <p>Com taxa de conversão de 5%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="why-ia-box">
+                        <h4>🤖 Por que a IA nunca perde vendas?</h4>
+                        <ul>
+                            <li>✅ <strong>Atende 24/7</strong> - Sem feriados, fins de semana ou horário comercial</li>
+                            <li>✅ <strong>Resposta instantânea</strong> - 0 segundos de espera, sempre</li>
+                            <li>✅ <strong>Follow-up automático</strong> - Nunca esquece de um lead</li>
+                            <li>✅ <strong>Escala infinita</strong> - Atende 1 ou 1.000 simultaneamente</li>
+                        </ul>
+                    </div>
+
+                    <p class="disclaimer-small">
+                        * Estimativa conservadora baseada em taxas médias de mercado: 35-48% dos leads não são respondidos adequadamente, 
+                        resultando em perda de conversão de 3-7%. Seus resultados podem variar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="features" class="section">
         <div class="container">
             <div class="section-header">
@@ -1284,16 +1774,13 @@
                     <p class="plan-description">Solução completa</p>
                     <div class="price">Sob consulta</div>
                     <ul class="plan-features">
-                        <li>Atendentes ilimitados</li>
-                        <li>Múltiplos números WhatsApp</li>
+                        <li>Tudo do Business</li>
+                        <li>Até 10 atendentes</li>
+                        <li>1 número WhatsApp</li>
                         <li>Implementação completa</li>
                         <li>Configuração personalizada</li>
-                        <li>Integrações customizadas</li>
-                        <li>Treinamento da equipe</li>
                         <li>Suporte prioritário dedicado</li>
                         <li>Relatórios personalizados</li>
-                        <li>SLA garantido</li>
-                        <li>Gerente de conta exclusivo</li>
                     </ul>
                     <a href="https://wa.me/5516994043616?text=Quero saber mais sobre o plano Enterprise" class="btn btn-secondary" target="_blank">Falar com Especialista</a>
                 </div>
@@ -1301,12 +1788,29 @@
         </div>
     </section>
 
-    <section id="cta" class="cta-section">
+    <section id="cta" class="cta-section-modern">
         <div class="container">
-            <div class="cta-box">
-                <h2>Configure em Minutos, Venda para Sempre</h2>
-                <p>Nossa IA configura tudo automaticamente. Você só ajusta os detalhes e começa a vender.</p>
-                <a href="contato.html" class="btn">Começar Teste Gratuito</a>
+            <div class="cta-modern">
+                <div class="cta-content">
+                    <span class="cta-badge">Comece Agora</span>
+                    <h2 class="cta-headline">
+                        Pare de Perder Vendas.<br>
+                        Comece a Vender <span class="gradient-text">24/7</span>
+                    </h2>
+                    <p class="cta-description">
+                        Configure em minutos. Nossa IA cuida de tudo automaticamente. 
+                        Você só ajusta os detalhes e começa a receber vendas enquanto dorme.
+                    </p>
+                </div>
+                <div class="cta-action">
+                    <a href="https://wa.me/5516994043616?text=Quero começar a vender 24/7 com o Alta CRM" class="btn-cta-modern" target="_blank">
+                        Começar Teste Gratuito
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <p class="cta-guarantee">
+                        Sem cartão de crédito · Configuração automática · Suporte em português
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -1354,6 +1858,234 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // ========================================
+        // CALCULADORA DE ROI COM SLIDERS
+        // ========================================
+        const leadsSlider = document.getElementById('leads-slider');
+        const ticketSlider = document.getElementById('ticket-slider');
+        const leadsDisplay = document.getElementById('leads-display');
+        const ticketDisplay = document.getElementById('ticket-display');
+        const lossDisplay = document.getElementById('loss-display');
+        const calcBreakdown = document.getElementById('calc-breakdown');
+
+        function updateCalculation() {
+            const leads = parseInt(leadsSlider.value);
+            const ticket = parseInt(ticketSlider.value);
+            
+            // Atualiza displays dos sliders
+            leadsDisplay.textContent = leads;
+            ticketDisplay.textContent = 'R$ ' + ticket;
+            
+            // Cálculo impactante e realista
+            // 48% dos leads não são atendidos adequadamente (estudos comprovam)
+            // 75% desses poderiam converter com atendimento 24/7
+            // Taxa de conversão: 25% (leads que SERIAM atendidos convertem bem)
+            const leadsNaoRespondidos = Math.round(leads * 0.48);
+            const leadsPerdidos = Math.round(leadsNaoRespondidos * 0.75);
+            const vendasPerdidas = leadsPerdidos * 0.25;
+            const prejuizoMensal = vendasPerdidas * ticket;
+            
+            // Atualiza valor do prejuízo
+            lossDisplay.textContent = 'R$ ' + prejuizoMensal.toLocaleString('pt-BR', { 
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+            
+            // Atualiza breakdown
+            calcBreakdown.innerHTML = `
+                <div class="detail-item">
+                    <span class="detail-icon">📊</span>
+                    <div>
+                        <strong>${leadsNaoRespondidos} leads ignorados</strong>
+                        <p>48% dos seus ${leads} leads não são atendidos adequadamente</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">⏰</span>
+                    <div>
+                        <strong>${leadsPerdidos} leads recuperáveis</strong>
+                        <p>75% deles converteriam com atendimento 24/7</p>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">💸</span>
+                    <div>
+                        <strong>${vendasPerdidas.toFixed(1)} vendas perdidas/mês</strong>
+                        <p>Com taxa de conversão de 25% (ticket de R$ ${ticket})</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Event listeners
+        leadsSlider.addEventListener('input', updateCalculation);
+        ticketSlider.addEventListener('input', updateCalculation);
+
+        // Calcular ao carregar
+        updateCalculation();
+
+        // ========================================
+        // PARTÍCULAS CONECTADAS COM EXPLOSÃO
+        // ========================================
+        (function() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 100 };
+            let animationId;
+            
+            // Redimensionar canvas
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            // Partícula
+            class Particle {
+                constructor(x, y) {
+                    this.x = x || Math.random() * canvas.width;
+                    this.y = y || Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 1;
+                    this.speedX = (Math.random() - 0.5) * 0.5;
+                    this.speedY = (Math.random() - 0.5) * 0.5;
+                    this.exploded = false;
+                    this.explosionSpeed = 0;
+                }
+                
+                update() {
+                    // Movimento normal
+                    if (!this.exploded) {
+                        this.x += this.speedX;
+                        this.y += this.speedY;
+                        
+                        // Volta para o lado oposto
+                        if (this.x > canvas.width) this.x = 0;
+                        if (this.x < 0) this.x = canvas.width;
+                        if (this.y > canvas.height) this.y = 0;
+                        if (this.y < 0) this.y = canvas.height;
+                        
+                        // Detecta mouse e explode
+                        if (mouse.x && mouse.y) {
+                            const dx = this.x - mouse.x;
+                            const dy = this.y - mouse.y;
+                            const distance = Math.sqrt(dx * dx + dy * dy);
+                            
+                            if (distance < mouse.radius) {
+                                this.exploded = true;
+                                const angle = Math.atan2(dy, dx);
+                                this.speedX = Math.cos(angle) * 3;
+                                this.speedY = Math.sin(angle) * 3;
+                                this.explosionSpeed = 3;
+                            }
+                        }
+                    } else {
+                        // Movimento de explosão
+                        this.x += this.speedX;
+                        this.y += this.speedY;
+                        this.explosionSpeed *= 0.95;
+                        
+                        // Volta ao normal
+                        if (this.explosionSpeed < 0.1) {
+                            this.exploded = false;
+                            this.speedX = (Math.random() - 0.5) * 0.5;
+                            this.speedY = (Math.random() - 0.5) * 0.5;
+                        }
+                    }
+                }
+                
+                draw() {
+                    ctx.fillStyle = 'rgba(91, 79, 232, 0.6)';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+            
+            // Criar partículas
+            function init() {
+                particles = [];
+                const numberOfParticles = Math.floor((canvas.width * canvas.height) / 15000);
+                
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particles.push(new Particle());
+                }
+            }
+            
+            // Conectar partículas
+            function connect() {
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a + 1; b < particles.length; b++) {
+                        const dx = particles[a].x - particles[b].x;
+                        const dy = particles[a].y - particles[b].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 120) {
+                            const opacity = 1 - (distance / 120);
+                            ctx.strokeStyle = `rgba(91, 79, 232, ${opacity * 0.15})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            // Animar
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                
+                connect();
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            // Mouse move
+            canvas.addEventListener('mousemove', function(e) {
+                mouse.x = e.x;
+                mouse.y = e.y;
+            });
+            
+            canvas.addEventListener('mouseleave', function() {
+                mouse.x = null;
+                mouse.y = null;
+            });
+            
+            // Touch events para mobile
+            canvas.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+                mouse.x = e.touches[0].clientX;
+                mouse.y = e.touches[0].clientY;
+            });
+            
+            canvas.addEventListener('touchend', function() {
+                mouse.x = null;
+                mouse.y = null;
+            });
+            
+            // Permitir eventos no canvas
+            canvas.style.pointerEvents = 'auto';
+            
+            init();
+            animate();
+            
+            // Reiniciar ao redimensionar
+            window.addEventListener('resize', () => {
+                init();
+            });
+        })();
+    </script>
 
     <script>
         // Smooth scroll
