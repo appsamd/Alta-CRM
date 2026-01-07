@@ -1,0 +1,27 @@
+# Alta CRM - Robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://altacrm.com.br/sitemap.xml
+
+# Crawl-delay para não sobrecarregar o servidor
+Crawl-delay: 1
+
+# Bloquear acesso a pastas técnicas (se houver)
+Disallow: /assets/
+Disallow: /*.json$
+
+# Permitir bots importantes
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

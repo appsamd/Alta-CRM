@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Alta CRM</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/Dzbw24sk/Favicon-Alta-CRM.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0D0F1C;
+            --secondary: #5B4FE8;
+            --accent: #00E5FF;
+            --text: #E8EAF0;
+            --text-dim: #9BA3B4;
+            --surface: #181B2A;
+            --border: rgba(255, 255, 255, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        .contact-hero {
+            text-align: center;
+            padding: 60px 0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-dim);
+            margin-bottom: 60px;
+        }
+
+        .main-contact {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: 24px;
+            padding: 60px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .main-contact:hover {
+            border-color: #25D366;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(37, 211, 102, 0.2);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #25D366, #1FB855);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 24px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .main-contact h3 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .main-contact p {
+            font-size: 16px;
+            color: var(--text-dim);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            padding: 18px 48px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1FB855;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        .divider {
+            margin: 40px 0;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .divider p {
+            font-size: 14px;
+            color: var(--text-dim);
+            margin-bottom: 16px;
+        }
+
+        .divider a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .divider a:hover {
+            color: #00B8D4;
+        }
+
+        footer {
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border);
+            margin-top: 100px;
+        }
+
+        .footer-text {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .main-contact {
+                padding: 40px 30px;
+            }
+
+            .btn-whatsapp {
+                width: 100%;
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html"><img src="http://i.postimg.cc/7Y6VKq0m/Logo-Alta-CRM-4x1-Oficial-Fundo-Site.png" alt="Alta CRM"></a>
+        </header>
+
+        <section class="contact-hero">
+            <h1>Fale com a <span class="gradient-text">Nossa Equipe</span></h1>
+            <p class="subtitle">Atendimento rápido e humanizado via WhatsApp</p>
+
+            <div class="main-contact">
+                <div class="contact-icon">💬</div>
+                <h3>WhatsApp</h3>
+                <p>Fale diretamente com nosso time de vendas. Resposta rápida e atendimento personalizado para tirar suas dúvidas e conhecer o Alta CRM na prática.</p>
+                <a href="https://wa.me/5516994043616?text=Olá! Quero conhecer mais sobre o Alta CRM" class="btn-whatsapp" target="_blank">Iniciar Conversa Agora</a>
+                
+                <div class="divider">
+                    <p>Ou prefere e-mail?</p>
+                    <a href="/cdn-cgi/l/email-protection#e3808c8d9782978ca3828f978280918ecd808c8ecd8191"><span class="__cf_email__" data-cfemail="0f6c60617b6e7b604f6e637b6e6c7d62216c6062216d7d">[email&#160;protected]</span></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="http://i.postimg.cc/7Y6VKq0m/Logo-Alta-CRM-4x1-Oficial-Fundo-Site.png" alt="Alta CRM">
+          

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Alta CRM</title>
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/Dzbw24sk/Favicon-Alta-CRM.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0D0F1C;
+            --secondary: #5B4FE8;
+            --accent: #00E5FF;
+            --text: #E8EAF0;
+            --text-dim: #9BA3B4;
+            --surface: #181B2A;
+            --border: rgba(255, 255, 255, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        header {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
+        }
+
+        header img {
+            height: 60px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .content h2 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            color: var(--accent);
+        }
+
+        .content p {
+            font-size: 16px;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .value-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .value-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-8px);
+        }
+
+        .value-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .value-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .value-card p {
+            font-size: 14px;
+            color: var(--text-dim);
+            margin: 0;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--secondary), #7B6FFF);
+            padding: 60px 40px;
+            border-radius: 24px;
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .cta-box h2 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: white;
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-text {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .content h2 {
+                font-size: 24px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html"><img src="http://i.postimg.cc/7Y6VKq0m/Logo-Alta-CRM-4x1-Oficial-Fundo-Site.png" alt="Alta CRM"></a>
+        </header>
+
+        <section class="hero">
+            <h1>Sobre o <span class="gradient-text">Alta CRM</span></h1>
+        </section>
+
+        <div class="content">
+            <p>O Alta CRM nasceu da necessidade real de empresas que perdiam oportunidades por não conseguirem atender todos os leads que chegavam pelo WhatsApp. Seja fora do horário comercial, em momentos de alta demanda, ou simplesmente por falta de equipe suficiente.</p>
+
+            <p>Diferente dos chatbots tradicionais que frustram clientes com respostas robotizadas e menus confusos, desenvolvemos um verdadeiro <strong>Agente de Inteligência Artificial</strong> que entende contexto, interpreta intenções e mantém conversas naturais.</p>
+
+            <h2>Nossa Missão</h2>
+            <p>Democratizar o acesso a tecnologia de ponta em inteligência artificial para empresas de todos os tamanhos. Acreditamos que não é preciso ser uma multinacional para ter um atendimento de excelência 24/7.</p>
+
+            <h2>O que nos Diferencia</h2>
+            <p>Enquanto outros CRMs te entregam uma ferramenta vazia e complexa que leva semanas para configurar, nós entregamos uma solução que já funciona desde o primeiro dia. Nossa IA faz a configuração inicial automaticamente - você só precisa fazer os ajustes finos para refletir a personalidade da sua marca.</p>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Simplicidade</h3>
+                    <p>Tecnologia avançada, mas sem complicação. Se é difícil de usar, não serve.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Agilidade</h3>
+                    <p>Configure em minutos, não em semanas. Tempo é dinheiro e você precisa vender agora.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Inteligência Real</h3>
+                    <p>Não é robô programado. É IA que pensa, aprende e melhora a cada conversa.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Resultados</h3>
+                    <p>Não importa quantas features temos. Importa quantas vendas você fecha.</p>
+                </div>
+            </div>
+
+            <h2>Para Quem é o Alta CRM?</h2>
+            <p>Para empresas que:</p>
+            <ul style="color: var(--text-dim); margin-left: 20px; margin-bottom: 20px;">
+                <li>Perdem leads por não atender rápido o suficiente</li>
+                <li>Querem vender 24/7 sem contratar mais pessoas</li>
+                <li>Precisam de prospecção ativa B2B automatizada</li>
+                <li>Querem um CRM que funciona de verdade, não só bonito</li>
+                <li>Buscam escalar vendas sem escalar custos</li>
+            </ul>
+
+            <p>Se você se identificou com pelo menos um desses pontos, o Alta CRM foi feito para você.</p>
+        </div>
+
+        <div class="cta-box">
+            <h2>Pronto para Transformar suas Vendas?</h2>
+            <p>Fale com nossa equipe e descubra como o Alta CRM pode multiplicar seus resultados</p>
+            <a href="contato.html" class="btn">Falar com Especialista</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="http://i.postimg.cc/7Y6VKq0m/Logo-Alta-CRM-4x1-Oficial-Fundo-Site.png" alt="Alta CRM">
+            </div>
+            <p class="footer-text">© 2026 Alta CRM. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="protect.js"></script>
+</body>
+</html>
