@@ -1093,7 +1093,25 @@
             font-size: 16px;
             color: var(--text-dim);
             line-height: 1.6;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
+        }
+
+        .roi-instructions {
+            background: rgba(91, 79, 232, 0.1);
+            border: 1px solid rgba(91, 79, 232, 0.3);
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
         .slider-group {
@@ -1107,6 +1125,14 @@
             letter-spacing: 1px;
             color: var(--text-dim);
             margin-bottom: 12px;
+        }
+
+        .slider-hint {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-top: 8px;
+            opacity: 0.6;
         }
 
         .slider-value {
@@ -1362,6 +1388,15 @@
                 font-size: 36px;
             }
 
+            .roi-instructions {
+                font-size: 13px;
+                padding: 14px 16px;
+            }
+
+            .slider-hint {
+                font-size: 11px;
+            }
+
             .roi-result-side {
                 padding: 40px 30px;
             }
@@ -1610,16 +1645,22 @@
                         Calcule seu prejuízo mensal por não ter um atendimento instantâneo.
                     </p>
 
+                    <div class="roi-instructions">
+                        👇 Arraste os indicadores abaixo para ajustar seus números
+                    </div>
+
                     <div class="slider-group">
                         <label>LEADS / MÊS</label>
                         <div class="slider-value" id="leads-display">100</div>
                         <input type="range" id="leads-slider" min="10" max="1000" value="100" step="10" class="custom-slider">
+                        <div class="slider-hint">← Arraste para ajustar →</div>
                     </div>
 
                     <div class="slider-group">
                         <label>TICKET MÉDIO</label>
                         <div class="slider-value" id="ticket-display">R$ 600</div>
                         <input type="range" id="ticket-slider" min="100" max="5000" value="1000" step="100" class="custom-slider">
+                        <div class="slider-hint">← Arraste para ajustar →</div>
                     </div>
                 </div>
 
